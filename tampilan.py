@@ -3,6 +3,7 @@ import pygame
 import sort
 
 
+
 #Melakukan Setinggan py game mengatur warna dan dimensi
 dimensions = [1024, 512]
 pygame.init()
@@ -17,6 +18,7 @@ def init(item):
 def checkQuit():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            pygame.display.quit()
             pygame.quit()
 
 #Update Tampilan, fungsi ini dipanggil dari dalam class QuickSort yang diimport.
@@ -36,16 +38,17 @@ def update(quicksort, element1=None, element2=None, display=display):
     checkQuit()
     pygame.display.update()     
 
-def tetapTerbuka(display, time):
-    pygame.display.set_caption("Tampilan QuickSort | Time: {:.3f}  |  Status: Done!".format(time))
+def tetapTerbuka(display, waktuEksekusi):
+    pygame.display.set_caption("Tampilan QuickSort | Time: {:.3f}  |  Status: Done!".format(waktuEksekusi))
     while True:
         checkQuit()
+        pygame.display.update()
 
 def main(item):
     try:
         quicksort = init(item)
-        time_elapsed = quicksort.mulai(0, len(quicksort.item))[1]
-        tetapTerbuka(display, time_elapsed)
+        waktuEksekusi = quicksort.mulai(0, len(quicksort.item))[1]
+        tetapTerbuka(display, waktuEksekusi)
         return None
     except:
         pass

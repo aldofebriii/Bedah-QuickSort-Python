@@ -1,7 +1,5 @@
 import numpy as np
 import sort
-#Status Bertanya
-ask = True
 
 #Menerima User Input
 def acceptUserInput():
@@ -11,8 +9,6 @@ def acceptUserInput():
         print('Silahkan masukan panjang array/list Saudara')
         listLength = input('Angka Minimal 3 .. / Jika ingin keluar silahkan tulis q..')
         if listLength == 'q' or listLength == 'Q':
-            global ask
-            ask = False
             quit()
         elif(listLength == 'pure'):
             listPureLen = int(input('Masukan Angka'))
@@ -59,5 +55,4 @@ def acceptUserInput():
     except ValueError:
         acceptUserInput()
 
-while ask:
-    acceptUserInput()
+acceptUserInput()

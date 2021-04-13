@@ -49,11 +49,11 @@ class QuickSort():
     def algoritma(self, kiri, kanan):
         if(len(self.item) > 1):
             key = self.partisi(kiri, kanan)
-        print(self.item)
-        if(key - 1 > kiri ):
-            self.algoritma(kiri, key - 1)
-        if(key < kanan ):
-            self.algoritma(key, kanan)
+            print(self.item)
+            if(key - 1 > kiri ):
+                self.algoritma(kiri, key - 1)
+            if(key < kanan ):
+                self.algoritma(key, kanan)
     
     
 class PureQuickSort(QuickSort):
